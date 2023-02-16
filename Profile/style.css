@@ -1,0 +1,134 @@
+/* Defaulting Setting */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Sans-Serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Utilities */
+
+.col{
+    align-items: center;
+}
+
+.col-1{
+    flex:1;
+}
+
+.col-2{
+    flex:2;
+}
+
+.col-3{
+    flex:3;
+}
+
+.col-4{
+    flex: 4;
+}
+
+.row{
+    display: flex;
+}
+
+.spaceAround{
+    justify-content: space-around;
+}
+
+.spaceBetween{
+    justify-content: space-between;
+}
+
+.center{
+    margin: 0 auto; /* for div */
+    align-items: center; /* for flex */
+    text-align: center; /* for block */
+}
+
+/* Setting specific */
+.size{
+    font-size: 30px;
+}
+
+h1.title{
+    background-color:cadetblue;
+    padding: 20px;
+}
+
+ul{
+    list-style: none;
+}
+
+a.navItems{
+    text-decoration: none;
+    color: inherit;
+}
+
+.active{
+    font-weight: bold;
+}
+
+.navBar{
+    background-color: teal;
+    color: white;
+    align-items: center;
+    height: 60px;
+    position: sticky;
+    top: 0;
+}
+
+.btn{
+    background-color: lightseagreen;
+    color: white;
+    padding: 5px;
+}
+
+.cards{
+    margin-top: 40px;
+    border: 2px gray solid;
+    margin-right: 10px;
+}
+
+.backGroundColor{
+    height: 80px;
+    background-color: cadetblue;
+    padding: 20px;
+}
+
+img{
+    height: 40px;
+}
+
+img.avatar{
+    height: 100px;
+    margin-top: 50px;
+}
+
+img.icon{
+    margin-right: 10px;
+}
+
+img.action{
+    margin-left: 10px;
+}
+
+.userinfo{
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.overflow{
+    margin-top: 10px;
+    padding: 20px;
+}
+
+div.part{
+    margin-bottom: 20px;
+}
+
+.sideNav{
+    margin-left: 10px;
+}
+
