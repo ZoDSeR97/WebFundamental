@@ -9,119 +9,97 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- NavBar -->
-    <div class="row navBar spaceAround">
-        <div class="col-1">
-            <a href="#" class="title navItems">
-                Profile
-            </a> 
+    <div class="row navBar">
+        <div class="row navItems">
+            <p class="title">Profile</p>
+            <p>Home</p>
+            <p>My Profile</p>
+            <p>Find Connections</p>
         </div>
-        <div class="col-2">
-            <ul class="row spaceAround">
-                <li>
-                    <a href="#" class="navItems">Home</a>
-                </li>
-                <li>
-                    <a href="#" class="active navItems">My Profile</a>
-                </li>
-                <li>
-                    <a href="#" class="navItems">Find Connections</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-2 center">
-            <button class="btn">Sign out</button>
-        </div>
+        <button class="btn" onclick="peace(this)">Sign out</button>
     </div>
-
-    <!-- Contents -->
-    <div class="row spaceEvenly">
-        <!-- Ads space maybe -->
-        <div class="col-1"></div>
-        <!-- Main content -->
-        <div class="col-4">
-            <div class="cards">
-                <div class="backGroundColor">
+    <div class="row content">
+        <div class="main">
+            <div class="card">
+                <h1 class="banner">
                     <img src="./Resources/user-circle.png" class="avatar">
-                </div>
-                <div class="userinfo">
-                    <div class="part">
-                        <h1 class="size">Phantasmal Joker</h1>
-                    </div>
-                    <div class="row center part">
+                </h1>
+                <div class="userInfo">
+                    <h1 class="title" id="username">Phantasmal Joker</h1>
+                    <div class="row segment">
                         <img src="./Resources/map-marker.png" class="icon">
                         <p>South Pole</p>
                     </div>
-                    <div class="part">
-                        <p>Developer | Engineer | Problem Solver</p>
-                        <p>Jack of All Trades, Master of None</p>
-                    </div>
-                    <div class="row center">
+                    <p class="segment">Developer | Engineer | Problem Solver <br>
+                        Jack of All Trades, Master of None</p>
+                    <div class="row segment">
                         <img src="./Resources/gear.png" class="icon">
-                        <a href="#">Edit Profile</a>
+                        <a href="#" onclick="editName()">Edit Profile</a>
                     </div>
                 </div>
             </div>
-            <div class="cards">
-                <h1 class="title size">Education</h1>
-                <div class="overflow">
-                    <div class="part">
-                        <p>Snowballing University</p> 
-                        <p>Slytherin House Jan 1 - Dec 24</p>
-                    </div>
-                    <div class="part">
-                        <p>Full-Stack Dev</p>
-                        <p>HTML | CS | JS</p>
-                    </div>
-                    <div class="part">
-                        <p>Data Analyst</p>
-                        <p>Python | Matplotlib | Numpy</p>
-                    </div>
+            <div class="card">
+                <h1 class="banner title">Educations</h1>
+                <div class="info">
+                    <p>Snowballing University <br>
+                        Slytherin House Jan 1 - Dec 24 <br><br>
+                        Full-Stack Dev <br>
+                        HTML | CS | JS <br> <br>
+                        Data Analyst <br>
+                        Python | Matplotlib | Numpy</p>
                 </div>
             </div>
         </div>
-        <!-- Side utilities -->
-        <div class="col-3 sideNav">
-            <div class="cards">
-                <h1 class="title size">Friend Requests</h1>
-                <div class="overflow">
-                    <div class="row col part">
-                        <div class="col-1">
+        <div class="side">
+            <div class="card">
+                <h1 class="banner title"><span class="num" id="pendingTotal">2</span> Connection Requests</h1>
+                <div class="row info">
+                    <div>
+                        <div class="row segment" id="userpending1">
+                            <img src="./Resources/user-circle.png" class="icon">
                             <p>Santa</p>
                         </div>
-                        <div class="col-1">
-                            <img src="./Resources/accept-circle.png" class="action">
-                            <img src="./Resources/close-circle.png" class="action">
-                        </div>
-                    </div>
-                    <div class="row col">
-                        <div class="col-1">
+                        <div class="row segment" id="userpending2">
+                            <img src="./Resources/user-circle.png" class="icon">
                             <p>Little Timmy</p>
                         </div>
-                        <div class="col-1">
-                            <img src="./Resources/accept-circle.png" class="action">
-                            <img src="./Resources/close-circle.png" class="action">
+                    </div>
+                    <div>
+                        <div class="row segment" id="actionpending1">
+                            <img src="./Resources/accept-circle.png" class="icon" onclick="add('pending1')">
+                            <img src="./Resources/close-circle.png" class="icon" onclick="rev('pending1')">
+                        </div>
+                        <div  class="row segment" id="actionpending2">
+                            <img src="./Resources/accept-circle.png" class="icon" onclick="add('pending2')">
+                            <img src="./Resources/close-circle.png" class="icon" onclick="rev('pending2')">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="cards">
-                <h1 class="title size">Friend List</h1>
-                <div class="overflow">
-                    <div class="part">
-                        <div class="row center part">
+            <div class="card">
+                <h1 class="banner title"> <span class="num" id="connectionsTotal">4</span> Connections</h1>
+                <div class="info">
+                    <div id="connectionsList">
+                        <div class="row segment">
                             <img src="./Resources/user-circle.png" class="icon">
                             <p>Dobby</p>
                         </div>
-                        <div class="row center part">
+                        <div class="row segment">
                             <img src="./Resources/user-circle.png" class="icon">
                             <p>Grinch</p>
+                        </div>
+                        <div class="row segment">
+                            <img src="./Resources/user-circle.png" class="icon">
+                            <p>Jack Sparrow</p>
+                        </div>
+                        <div class="row segment">
+                            <img src="./Resources/user-circle.png" class="icon">
+                            <p>Terminator</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-1"></div>
     </div>
 </body>
 </html>
